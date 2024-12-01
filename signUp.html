@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUP page</title>
+    <link rel="stylesheet" href="./signUp.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <form action="" id="form">
+
+        <h1>SignUP Page</h1>
+
+        <div>
+            <input type="text" name="Full-name" placeholder="Enter your name" id="f_name">
+
+        </div>
+        
+        <div id="email-div">
+            <input type="text" name="email" placeholder="Enter your email" id="email">
+            <aside id="error-01" aria-label="error-01"></aside>
+        </div>
+
+        <div>
+            <input type="tel" name="mobile-number" placeholder="Enter your mobile number" id="mobile">
+            <aside id="error-02" aria-label="error-02"></aside>
+        </div>
+
+        <div>
+            <input type="password" name="password" placeholder="Enter your password" id="password">
+        </div>
+
+        <div>
+            <input type="password" name="password" placeholder="Enter your confirm password" id="confirm_password">
+            <aside id="error-03" aria-label="error-03"></aside>
+
+        </div>
+        <button type="submit" id="submit_btn">Login</button>
+
+        <button type="reset" id="clear_btn">Clear</button>
+
+    </form>
+
+    <script src="./signUp.js"></script>
+
+</body>
+
+</html>
