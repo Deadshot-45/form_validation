@@ -32,21 +32,24 @@ function form_fn(e) {
     return;
   } else {
     alert("registration successfully");
-    console.log(username, mob, email, password, confirm_password);
-    localStorage.setItem("username", email);
-    localStorage.setItem("password", password);
+    
 
     submit_btn.addEventListener("click", ()=>{
-      window.open("./login.html");
-      window.location.reload();
+      console.log(username, mob, email, password, confirm_password);
+    localStorage.setItem("username", email);
+    localStorage.setItem("password", password);
     })
+
+    window.open(`./login.html`);
+  window.location.reload();
   }
 }
+
 
 form.addEventListener("submit", form_fn);
 
 let clear_btn = document.getElementById("clear_btn");
-clear_btn.addEventListener("click", () => Window.location.reset());
+clear_btn.addEventListener("click", () => window.location.reset());
 
 function validate_email() {
   let email = document.getElementById("email");
@@ -78,6 +81,9 @@ function validate_mobile() {
     error_02.innerHTML = "please enter number";
     mobile.style.border = "2px solid red";
     return false;
+  }else if(mobile.value === "") {
+    error_02.innerHTML = "";
+    mobile.style.border = "";
   }
     else if(mobile.value.length != 10 && mobile.value.length != 0) {
       error_02.innerHTML = "please enter 10 digit mobile number";
@@ -87,9 +93,6 @@ function validate_mobile() {
       error_02.innerHTML = "";
       mobile.style.border = "2px solid green";
       return true;
-    } else {
-      error_02.innerHTML = "";
-      mobile.style.border = "";
     }
     return true;
 }
@@ -113,7 +116,7 @@ function validate_password() {
     error_03.innerHTML = "";
     password.style.border = "2px solid green";
     confirm_password.style.border = "2px solid green";
-  } else {
+  } else if(confirm_password.value === "") {
     error_03.innerHTML = "";
     password.style.border = "";
     confirm_password.style.border = "";
