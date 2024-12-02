@@ -2,16 +2,18 @@ let form = document.getElementById("form");
 let mobile = document.getElementById("mobile");
 let email = document.getElementById("email");
 let confirm_password = document.getElementById("confirm_password");
+let submit_btn = document.getElementById("submit_btn")
 let count = 0;
 
 function form_fn(e) {
   e.preventDefault();
 
+  let submit_btn = document.getElementById("submit_btn")
   let username = document.getElementById("f_name").value;
-  let mob = mobile.value;
-  let email = email.value;
+  let mob = document.getElementById("mobile").value;
+  let email = document.getElementById("email").value;
   let password = document.getElementById("password").value;
-  let confirm_password = confirm_password.value;
+  let confirm_password = document.getElementById("confirm_password").value;
 
   if (
     username == "" ||
@@ -21,7 +23,8 @@ function form_fn(e) {
     confirm_password == ""
   ) {
     alert("please fill the deatils");
-  } else if (!validate_email || !validate_mobile) {
+  }else 
+  if (!validate_email || !validate_mobile) {
     alert("enter correct details");
     return;
   } else if (password !== confirm_password) {
@@ -33,8 +36,10 @@ function form_fn(e) {
     localStorage.setItem("username", email);
     localStorage.setItem("password", password);
 
-    window.open("./login.html");
-    window.location.reload();
+    submit_btn.addEventListener("click", ()=>{
+      window.open("./login.html");
+      window.location.reload();
+    })
   }
 }
 
@@ -50,13 +55,16 @@ function validate_email() {
   if (email.value.length < 8 && email.value.length != 0) {
     error_01.innerHTML = "please enter minimum 8 character";
     email.style.border = "2px solid red";
+    return false;
   } else if (email.value.length >= 8) {
     error_01.innerHTML = "";
     email.style.border = "2px solid green";
+    return true;
   } else {
     error_01.innerHTML = "";
     email.style.border = "";
   }
+  return true;
 }
 
 email.addEventListener("keyup", validate_email);
@@ -82,8 +90,8 @@ function validate_mobile() {
     } else {
       error_02.innerHTML = "";
       mobile.style.border = "";
-      return false;
     }
+    return true;
 }
 
 mobile.addEventListener("keyup", validate_mobile);
@@ -100,6 +108,7 @@ function validate_password() {
     error_03.innerHTML = "password not match, write correct password";
     password.style.border = "2px solid red";
     confirm_password.style.border = "2px solid red";
+    return false;
   } else if (confirm_password.value != "") {
     error_03.innerHTML = "";
     password.style.border = "2px solid green";
@@ -109,6 +118,7 @@ function validate_password() {
     password.style.border = "";
     confirm_password.style.border = "";
   }
+  return true;
 }
 
 confirm_password.addEventListener("keyup", validate_password);
