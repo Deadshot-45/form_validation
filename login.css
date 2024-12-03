@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(165deg, orange, orangered);
+}
+
+h1{
+    color: #777777;
+}
+
+#emoji{
+    font-size: 50px;
+}
+
+#form {
+    width: 25%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 20px;
+    box-shadow:
+        -4px -4px 8px rgba(0, 0, 0, 0.2),
+        4px 0 8px rgba(0, 0, 0, 0.2),
+        0 4px 8px rgba(0, 0, 0, 0.2),
+        0 0 8px #fff;
+    background: whitesmoke;
+}
+
+input {
+    width: 90%;
+    height: 40px;
+    padding-left: 10px;
+}
+
+button {
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: #fff;
+    transition: all;
+    transition-duration: 0.6s;
+    transition-timing-function: ease-in-out;
+}
+
+#show_btn {
+    border: none;
+    outline: none;
+}
+
+#show_passowrd_btn{
+    color: green;
+    font-size: normal;
+    border: none;
+    outline: none;
+}
+
+#submit_btn {
+    width: 90%;
+    height: 40px;
+    font-size: 1rem;
+    color: #ff0000;
+    border: 2px solid #ff0000;
+}
+
+#clear_btn {
+    width: 90%;
+    height: 40px;
+    font-size: 1rem;
+    color: #0000ff;
+    border: 2px solid #0000ff;
+}
+
+#show_passowrd_btn:hover {
+    color: gray;
+    background-color: transparent;
+}
+
+#submit_btn:hover {
+    color: #fff;
+    background-color: #ff0000;
+}
+
+#clear_btn:hover {
+    color: #fff;
+    background-color: #0000ff;
+}
+
+@media only screen and (max-width: 1200px) {
+    #form{
+        width: 30%;
+        height: 65%;
+        gap: 15px;
+        max-width: 70dvh;
+    }
+    h1{
+        font-size: 1.7rem;
+    }
+    #submit_btn, #clear_btn {
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    input{
+        height: 35px;
+    }
+}
+
+@media only screen and (max-width: 992px){
+    #form{
+        width: 40%;
+        height: 75%;
+    }
+    h1{
+        font-size: 1.7rem;
+    }
+    #submit_btn, #clear_btn {
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    input{
+        height: 35px;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    #form{
+        width: 50%;
+        height: 80%;
+    }
+    h1{
+        font-size: 1.7rem;
+    }
+    #submit_btn, #clear_btn {
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    input{
+        height: 35px;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    #form{
+        width: 50%;
+        height: 80%;
+    }
+    h1{
+        font-size: 1.7rem;
+    }
+    #submit_btn, #clear_btn {
+        height: 30px;
+        font-size: 0.8rem;
+    }
+    input{
+        height: 35px;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    #form{
+        width: 80%;
+        height: 80%;
+    }
+    #submit_btn, #clear_btn{
+        height: 30px;
+        font-size: 0.8rem;
+    }
+    input{
+        height: 35px;
+    }
+}
